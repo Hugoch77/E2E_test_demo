@@ -1,8 +1,8 @@
 @E2e
 Feature: Testing Online Fruits and Veggies
  
-  @Login
-  Scenario: Login to Online Fruits and Veggies
+   	@Login
+  	Scenario: Login to Online Fruits and Veggies
   	Given User Launches the APP
   				|http://localhost:8181|
     When User gives the Username as "Online_User"
@@ -13,7 +13,7 @@ Feature: Testing Online Fruits and Veggies
     Scenario: Add items into Cart
     Given User lands on the Add to cart page
     And User selects the items and add them to cart
-    			|items|quantity|
+    			|		items		|	quantity|
     			|	  Banana	|		2			|
     			|		Apple		|		2			|
     			|		Orange	|		2			|

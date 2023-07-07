@@ -13,17 +13,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterSuite;
 
-
-
-
 public class testngUtils extends AbstractTestNGCucumberTests {
-	
-	//public  WebDriver driver;
-	public static Scenario sc ;	
-	
-	  @Parameters({"Browser"})
-	  @BeforeTest
-	  public void beforeTest(String browser) throws Exception {
+
+	// public WebDriver driver;
+	public static Scenario sc;
+
+	@Parameters({ "Browser" })
+	@BeforeTest
+	public void beforeTest(String browser) throws Exception {
 //		  if(browser.equalsIgnoreCase("chrome")){
 //			//Driver exe config
 //				System.setProperty("webdriver.chrome.driver", "C:\\Users\\Dell\\Desktop\\Tutorials\\Drivers\\chromedriver.exe");
@@ -38,45 +35,42 @@ public class testngUtils extends AbstractTestNGCucumberTests {
 //			  System.setProperty("webdriver.gecko.driver", "C:\\Users\\Dell\\Desktop\\Tutorials\\Drivers\\geckodriver.exe");
 //				 driver= new FirefoxDriver();
 //		  }
-		  
-		  if(browser.equalsIgnoreCase("chrome")){
-		  BrowserFactory browserFactory = BrowserFactory.getInstance();
-			browserFactory.setDriver("chrome");
-		  }
-		  else if(browser.equalsIgnoreCase("IE")){
-			  BrowserFactory browserFactory = BrowserFactory.getInstance();
-				browserFactory.setDriver("IE");
-		  }
-		  else if(browser.equalsIgnoreCase("FF")){
-			  BrowserFactory browserFactory = BrowserFactory.getInstance();
-				browserFactory.setDriver("FF");
-		  }
-	  }
 
-	
-	  @AfterTest
-	  public void afterTest() {
-		 
+		if (browser.equalsIgnoreCase("chrome")) {
+			BrowserFactory browserFactory = BrowserFactory.getInstance();
+			browserFactory.setDriver("chrome");
+		} else if (browser.equalsIgnoreCase("IE")) {
+			BrowserFactory browserFactory = BrowserFactory.getInstance();
+			browserFactory.setDriver("IE");
+		} else if (browser.equalsIgnoreCase("FF")) {
+			BrowserFactory browserFactory = BrowserFactory.getInstance();
+			browserFactory.setDriver("FF");
+		}
+	}
+
+	@AfterTest
+	public void afterTest() {
+
 		BrowserFactory browserFactory = BrowserFactory.getInstance();
 		browserFactory.getDriver().close();
 		browserFactory.getDriver().quit();
-		  
+
 //		  driver.close();
 //		  driver.quit();
 //		  driver=null;
-	  }
-	  
-	  @Parameters({"Sender","receiver","password"})
-	  @AfterSuite 
-	  public void aftersuite(String sender, String receiver, String password){
-		  System.out.println("Send mail from "+sender+" reciever "+receiver+" password "+password);
-		  /**
-		   * 
-		   * Replcae your data accordingly
-		   * 
-		   * 
-		   */
-		//  Mailutils.Sendmail(sender, password, receiver);
-		  
-	  }
+	}
+
+	@Parameters({ "Sender", "receiver", "password" })
+	@AfterSuite
+	public void aftersuite(String sender, String receiver, String password) {
+		System.out.println("Send mail from " + sender + " reciever " + receiver + " password " + password);
+		/**
+		 * 
+		 * Replcae your data accordingly
+		 * 
+		 * 
+		 */
+		// Mailutils.Sendmail(sender, password, receiver);
+
+	}
 }
