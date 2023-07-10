@@ -41,7 +41,8 @@ public class BrowserFactory {
 			 webDriver.set(new FirefoxDriver());
 		}
 	}
-
+	
+	// Comments
 	public WebDriver getDriver() {
 		return webDriver.get();
 	}
