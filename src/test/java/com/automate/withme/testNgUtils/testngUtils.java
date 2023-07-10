@@ -66,7 +66,7 @@ public class testngUtils extends AbstractTestNGCucumberTests {
 		System.out.println("Send mail from " + sender + " reciever " + receiver + " password " + password);
 		/**
 		 * 
-		 * Replcae your data accordingly
+		 * Replace your data accordingly
 		 * 
 		 * 
 		 */

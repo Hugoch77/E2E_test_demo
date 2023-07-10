@@ -80,8 +80,12 @@ public class Add_to_Cart {
 		String Brinjal_qty = Qty.get(3).getText().replace("Qty :", "").trim();
 		String Potato_qty = Qty.get(4).getText().replace("Qty :", "").trim();
 
-		int Actual_UI_data[] = new int[] { Integer.parseInt(Apple_qty), Integer.parseInt(Banana_qty),
-				Integer.parseInt(Orange_qty), Integer.parseInt(Brinjal_qty), Integer.parseInt(Potato_qty) };
+		int Actual_UI_data[] = new int[] { 
+				Integer.parseInt(Apple_qty), 
+				Integer.parseInt(Banana_qty),
+				Integer.parseInt(Orange_qty), 
+				Integer.parseInt(Brinjal_qty), 
+				Integer.parseInt(Potato_qty) };
 
 		Assert.assertTrue(Arrays.equals(Expected_data, Actual_UI_data));
 		System.out.println("PASS: THE UI Quantity and Expected Quantity matched");
@@ -98,11 +102,10 @@ public class Add_to_Cart {
 		int Expected_tot_cost = 0;
 		int counter = 0;
 		for (int t : prices_arr) {
-			if (counter != 0) {
-				counter++;
-			}
 			Expected_tot_cost = Expected_tot_cost + (t * data[counter]);
+			counter++;
 		}
+		counter=0;
 
 		int Actual_tot_cost_UI = Integer.parseInt(Total_price.getText().replace("$", "").trim());
 
