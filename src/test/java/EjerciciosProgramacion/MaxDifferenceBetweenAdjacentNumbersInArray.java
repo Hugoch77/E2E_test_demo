@@ -1,7 +1,9 @@
 package EjerciciosProgramacion;
 
 public class MaxDifferenceBetweenAdjacentNumbersInArray {
-
+	
+	// Comments
+	
 	static void maxDifference(int array[]) {
 		int maxDifference = 0;
 		int difference = 0;

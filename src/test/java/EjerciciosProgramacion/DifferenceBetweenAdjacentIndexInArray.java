@@ -24,6 +24,7 @@ public class DifferenceBetweenAdjacentIndexInArray {
 		}
 	}
 	
+	// Execution
 	public static void main(String[] args) {
 		int arreglo[] = {2,6,23,41,22,10};
 		difference(arreglo);
